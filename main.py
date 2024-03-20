@@ -1,6 +1,6 @@
-import pandas as pd
 from data import get_data
 from classes import Song, Artist
+import tkinter as tk
 
 df = get_data()
 artists_array = []
@@ -17,5 +17,21 @@ for artist in artists_array:
                  row['energy'], row['genre']))
 
 # Printing songs for the first artist in the artists_array
-for song in artists_array[0].songs:
-    print(song)
+# print(len(artists_array[6].songs))
+# artists_array[54].print_popularity_plot()
+#
+#
+#
+# for song in artists_array[54].sort_array():
+#     print(song)
+#
+
+# for song in artists_array[6].songs:
+#     print(song)
+
+
+# user ui
+print('Hello Welcome to the Top Hits Spotify from 2000-2019 Project by Dmitry Lezinsky')
+
+print('Please choose an artist from the following list: ')
+print(artists_array)
