@@ -1,6 +1,10 @@
-from data import get_data
+from data import get_data, get_df_with_unqiue_artist_names
 from classes import Song, Artist
-import tkinter as tk
+import pandas as pd
+# Adjust display settings to show all rows and columns
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+
 
 df = get_data()
 artists_array = []
@@ -32,6 +36,6 @@ for artist in artists_array:
 
 # user ui
 print('Hello Welcome to the Top Hits Spotify from 2000-2019 Project by Dmitry Lezinsky')
+print('To start choose a way to find an artist or a band:')
 
-print('Please choose an artist from the following list: ')
-print(artists_array)
+print(get_df_with_unqiue_artist_names())
