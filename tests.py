@@ -39,8 +39,8 @@ if df_fixed.equals(df_expected_after_fix):
 else:
     print('Test Failed')
 
-
-print('--------------------')
-print(df_fixed)
-print('--------------------')
-print(df_expected_after_fix)
+#
+# print('--------------------')
+# print(df_fixed)
+# print('--------------------')
+# print(df_expected_after_fix)
