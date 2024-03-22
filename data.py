@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def load_data():
     # loading the data and cleaning the data and keeping only columns we need for the project.
     pd.set_option('display.max_columns', 24)
@@ -45,10 +46,3 @@ def fix_data(df):
     df.reset_index(drop=True, inplace=True)
 
     return df
-
-
-
-
-
-
-

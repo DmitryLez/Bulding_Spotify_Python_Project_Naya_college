@@ -4,7 +4,7 @@ from data import fix_data
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-# Creating a sample DataFrame with missing values ('None' and '') in 'artist' or 'song' columns
+# Creating a sample DataFrame with missing values ('None' and '') in 'artist' or 'song' columns or has them in the data.
 data = {
     'artist': ['John', 'None', '', 'Jane'],  # Using '' for missing values
     'song': ['Song 1', '', 'Song 3', 'Song 4'],  # Using '' for missing values
