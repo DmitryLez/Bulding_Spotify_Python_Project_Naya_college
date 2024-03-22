@@ -29,7 +29,7 @@ def top_n_by_graph(df, n, column):
     plt.show()
 
 
-def avg_per_artist(df, artist, column):
+def average_rating_per_artist_by_column(df, artist, column):
     # Filter df by artist name
     df_artist = df[df['artist'] == artist]
 
@@ -49,7 +49,7 @@ def artist_rank_by_column(df, column):
     # Iterate through each unique artist in the DataFrame
     for artist in df['artist'].unique():
         # Calculate the average rating for the specified column using avg_per_artist function
-        avg_df = avg_per_artist(df, artist, column)
+        avg_df = average_rating_per_artist_by_column(df, artist, column)
 
         # Append the resulting DataFrame to the list
         result_dfs.append(avg_df)
@@ -59,6 +59,45 @@ def artist_rank_by_column(df, column):
 
     # Sort the final DataFrame by the specified column in descending order
     final_df = final_df.sort_values(by=f'Avg_Songs_Rating_By_{column}', ascending=False)
+
+    # Reset index
+    final_df.reset_index(drop=True, inplace=True)
+
+    return final_df
+
+
+def most_rated_song_for_artist_by_column(df, artist, column):
+    # Filter df by artist name
+    filtered_by_artist_df = pd.DataFrame(df[df['artist'] == artist])
+
+    # Sort the filtered DataFrame by the specified column in descending order
+    sorted_df = filtered_by_artist_df.sort_values(by=column, ascending=False)
+
+    # Select specific columns for the sorted DataFrame using .loc[]
+    needed_column_df = sorted_df.loc[:, ['artist', 'song', column]]
+
+    # Reset index
+    needed_column_df.reset_index(drop=True, inplace=True)
+    return needed_column_df
+
+
+def most_rated_song_per_artist_by_column(df, column):
+    # Initialize an empty list to store the result DataFrames
+    result_dfs = []
+
+    # Iterate through each unique artist in the DataFrame
+    for artist in df['artist'].unique():
+        # Calculate the most rated by specified column using most_column_song_for_artist function
+        most_rated_son_df = most_rated_song_for_artist_by_column(df, artist, column).head(1)
+
+        # Append the resulting DataFrame to the list
+        result_dfs.append(most_rated_son_df)
+
+    # Concatenate all the result DataFrames into one DataFrame
+    final_df = pd.concat(result_dfs, ignore_index=True)
+
+    # Sort the final DataFrame by the specified column in descending order
+    final_df = final_df.sort_values(by=column, ascending=False)
 
     # Reset index
     final_df.reset_index(drop=True, inplace=True)

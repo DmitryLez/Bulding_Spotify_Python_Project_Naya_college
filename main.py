@@ -16,27 +16,44 @@ df = pd.DataFrame(fix_data(df))
 top_n_by_graph(df, 5, 'avg_score')
 
 # Print the average song popularity of Eminem:
-print('---------------------------------------------------------')
-print('The average song popularity of Eminem: ')
-print(avg_per_artist(df, 'Eminem', 'popularity'))
-print('---------------------------------------------------------')
+print('------------------------------------------------------------------------------------------------------------')
+print('The average song popularity of Eminem:')
+print(average_rating_per_artist_by_column(df, 'Eminem', 'popularity'))
+print('------------------------------------------------------------------------------------------------------------')
 
-# Print the average song danceability of Britney:
-print('---------------------------------------------------------')
-print('The average song danceability of Britney Spears: ')
-print(avg_per_artist(df, 'Britney Spears', 'danceability'))
-print('---------------------------------------------------------')
+# Print the average song danceability of Britney Spears:
+print('------------------------------------------------------------------------------------------------------------')
+print('The average song danceability of Britney Spears:')
+print(average_rating_per_artist_by_column(df, 'Britney Spears', 'danceability'))
+print('------------------------------------------------------------------------------------------------------------')
 
 # print top 3 Artists by average songs popularity:
-print('---------------------------------------------------------')
+print('------------------------------------------------------------------------------------------------------------')
 artist_by_avg_songs_popularity_df = artist_rank_by_column(df, 'popularity')
-print('Top 3 Artists by average songs popularity')
-print(artist_by_avg_songs_popularity_df.head(3))
-print('---------------------------------------------------------')
+print('Top 3 Artists by average songs popularity:')
+print(artist_rank_by_column(df, 'popularity').head(3))
+print('------------------------------------------------------------------------------------------------------------')
 
 # print top 3 Artists by average songs danceability:
-print('---------------------------------------------------------')
-artist_by_avg_songs_danceability_df = artist_rank_by_column(df, 'danceability')
-print('Top 3 Artists by average songs danceability')
-print(artist_by_avg_songs_danceability_df.head(3))
-print('---------------------------------------------------------')
+print('------------------------------------------------------------------------------------------------------------')
+print('Top 3 Artists by average songs danceability:')
+print(artist_rank_by_column(df, 'danceability').head(3))
+print('------------------------------------------------------------------------------------------------------------')
+
+print('------------------------------------------------------------------------------------------------------------')
+# Print the top 3 songs by popularity by Eminem:
+print('Top 3 songs by popularity by Eminem:')
+print(most_rated_song_for_artist_by_column(df, 'Eminem', 'popularity').head(3))
+print('------------------------------------------------------------------------------------------------------------')
+
+print('------------------------------------------------------------------------------------------------------------')
+# Print the top 3 songs by danceability by JAY-Z:
+print('Top 3 songs by danceability by JAY-Z:')
+print(most_rated_song_for_artist_by_column(df, 'JAY-Z', 'danceability').head(3))
+print('------------------------------------------------------------------------------------------------------------')
+
+print('------------------------------------------------------------------------------------------------------------')
+# Print the top 3 artists and their most popular song:
+print('Top 3 artists and their most popular song:')
+print(most_rated_song_per_artist_by_column(df,'popularity').head(3))
+print('------------------------------------------------------------------------------------------------------------')
