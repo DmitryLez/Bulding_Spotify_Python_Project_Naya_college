@@ -55,5 +55,18 @@ print('-------------------------------------------------------------------------
 print('------------------------------------------------------------------------------------------------------------')
 # Print the top 3 artists and their most popular song:
 print('Top 3 artists and their most popular song:')
-print(most_rated_song_per_artist_by_column(df,'popularity').head(3))
+print(most_rated_song_per_artist_by_column(df, 'popularity').head(3))
 print('------------------------------------------------------------------------------------------------------------')
+
+print('------------------------------------------------------------------------------------------------------------')
+# Print the top 3 popular song in year 2007:
+print('Top 3 popular song in year 2007:')
+print(most_rated_in_year_by_column(df, 2007, 'popularity').head(3))
+print('------------------------------------------------------------------------------------------------------------')
+
+print('------------------------------------------------------------------------------------------------------------')
+# Print the most popular song for Eminem in every year he realized a song and make a graph out of it:
+print('the most popular song for Eminem in every year he realized a song and make a graph out of it')
+print(artist_most_column_song_rank_over_the_years(df, 'Eminem', 'popularity'))
+print('------------------------------------------------------------------------------------------------------------')
+
