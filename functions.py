@@ -2,6 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+
+
 def top_n_by_graph(df, n, column):
     df_top_n = df.nlargest(n, column)
     df_top_n = df_top_n.loc[:, ['artist', 'song', column]]
@@ -113,12 +116,6 @@ def most_rated_in_year_by_column(df, year, column):
     return final_df
 
 
-import matplotlib.pyplot as plt
-
-import numpy as np
-
-import numpy as np
-
 
 def artist_most_column_song_rank_over_the_years(df, artist, column):
     # Initialize an empty list to store the result DataFrames
@@ -169,3 +166,11 @@ def artist_most_column_song_rank_over_the_years(df, artist, column):
     plt.show()
 
     return final_df
+
+
+def get_artists_starting_with_letter(df, letter):
+    letter = letter.capitalize()  # Capitalize the input letter
+    artists_with_letter = df[df['artist'].str.startswith(letter)]['artist'].unique()  # Getting artists with names starting with the input letter
+    artist_df = pd.DataFrame(artists_with_letter, columns=['artist'])  # Creating DataFrame with filtered artists
+    artist_df.reset_index(drop=True, inplace=True)  # Resetting indexes
+    return artist_df

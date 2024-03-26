@@ -1,10 +1,10 @@
 import pandas as pd
 
 
-def load_data():
+def load_data(filename):
     # loading the data and cleaning the data and keeping only columns we need for the project.
     pd.set_option('display.max_columns', 24)
-    df = pd.read_csv('songs_normalize.csv', encoding='latin1',
+    df = pd.read_csv(filename, encoding='latin1',
                      usecols=['artist', 'song', 'duration_ms', 'year', 'popularity', 'danceability', 'energy',
                               'genre'])
 
