@@ -33,7 +33,6 @@ data_expected_after_fix = {
 
 df_expected_after_fix = pd.DataFrame(data_expected_after_fix)
 
-
 if df_fixed.equals(df_expected_after_fix):
     print('Test completed successfully')
 else:

@@ -15,9 +15,13 @@ class DataPopularity:
     def plot_top_5_most_popular_songs(self):
         top_n_by_graph(self.df, 5, 'popularity')
 
-    def print_artists_starting_with_letter(self, letter):
+    def print_artists_starting_with_letter(self, letter, saved_to_file=False):
         print(f'All artists in the DF that start with the letter {letter.upper()}')
-        print(get_artists_starting_with_letter(self.df, letter))
+        result_df = get_artists_starting_with_letter(self.df, letter)
+        print(result_df)
+
+        if saved_to_file:
+            save_df_to_csv(result_df, 'Saved_Files', f'artists_starting_with_letter_{letter.upper()}')
 
     def print_average_song_popularity_of_artist(self, artist_name):
         print(f'The average song popularity of {artist_name} is:')
@@ -44,7 +48,8 @@ class DataPopularity:
         print(f'The most popular song for {artist_name} in every year they released a song, graphed:')
         print(artist_most_column_song_rank_over_the_years(self.df, artist_name, 'popularity'))
 
-#---------------------------------------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------------------------------------
 
 class DataDanceability:
     def __init__(self, filename):
@@ -83,7 +88,8 @@ class DataDanceability:
         print(f'The most danceable song for {artist_name} in every year they released a song, graphed:')
         print(artist_most_column_song_rank_over_the_years(self.df, artist_name, 'danceability'))
 
-#---------------------------------------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------------------------------------
 
 class DataEnergy:
     def __init__(self, filename):

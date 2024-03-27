@@ -10,7 +10,7 @@ pd.set_option('display.max_columns', None)
 print('--------------------------------------------Popularity---------------------------------------------------------')
 
 songs = DataPopularity('songs_normalize.csv')
-songs.print_artists_starting_with_letter('e')
+songs.print_artists_starting_with_letter('e', saved_to_file=True)
 songs.print_average_song_popularity_of_artist('Eminem')
 songs.print_top_5_most_popular_songs_of_artist('Eminem')
 songs.print_top_5_artists_by_average_song_popularity()
