@@ -32,7 +32,7 @@ It filters the top entries based on the specified column, such as the "popularit
 `classes.py`:
 This file contains three similar classes: `DataPopularity`, `DataDanceability`, and `DataEnergy`. They are separated into three classes to enhance the user experience when using the functions from the `functions.py` file.
 For simplicity of usage, each class accepts only the CSV file name to be loaded, automatically loads it, fixes it, and facilitates the extraction of data into DataFrames and plots.
-Additionally, every function that returns a DataFrame can be used together with the `saved_to_file=False` parameter to save the data into a named CSV file on the local machine.
+Additionally, every function that returns a DataFrame can be used together with the `saved_to_file=True` parameter to save the data into a named CSV file on the local machine.
 ![image](https://github.com/DmitryLez/Bulding_Spotify_Python_Project_Naya_college/assets/89594563/9a9e1a5f-c950-4056-8971-2019b5b9e43f)
 
 `main.py`:
