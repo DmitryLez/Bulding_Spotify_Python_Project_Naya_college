@@ -29,6 +29,7 @@ def top_n_by_graph(df, n, column):
 
     plt.tight_layout()
     plt.show()
+    return df_top_n
 
 
 def average_rating_per_artist_by_column(df, artist, column):
