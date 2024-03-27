@@ -1,6 +1,5 @@
 The primary goal of the project is to work with files and the Python Pandas library. 
 Additionally, I endeavored to keep the project as modular as possible, allowing for easy expansion in the future with additional files and functionality.
-![image](https://github.com/DmitryLez/Bulding_Spotify_Python_Project_Naya_college/assets/89594563/790041bc-9d27-4dcc-88fb-a9f15aff8813)
 
 it order  to showcase the project I have "Top Hits Spotify from 2000-2019" dataset I downloaded from kaggle.com.
 ![image](https://github.com/DmitryLez/Bulding_Spotify_Python_Project_Naya_college/assets/89594563/535c025e-e9d3-4069-bef3-9688b72d676d)
